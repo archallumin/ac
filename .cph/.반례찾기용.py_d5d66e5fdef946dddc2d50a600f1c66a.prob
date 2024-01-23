@@ -1,0 +1,1 @@
+{"name":"Local: 반례찾기용","url":"c:\\Users\\Administrator\\Documents\\ac\\반례찾기용.py","tests":[{"id":1703718892720,"input":"74 33","output":"2441"},{"id":1703718995877,"input":"300 300","output":"89999"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\Administrator\\Documents\\ac\\반례찾기용.py","group":"local","local":true}
