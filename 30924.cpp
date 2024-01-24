@@ -1,6 +1,4 @@
 #include <iostream>
-#include <random>
-#include <functional>
 #include <ctime>
 using namespace std;
 
