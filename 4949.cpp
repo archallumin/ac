@@ -3,46 +3,30 @@
 #include <string>
 using namespace std;
 
-int VPS_upgraded(string a)
-{
+int VPS_upgraded(string a) {
   stack<string> arr;
-  for (int i = 0; i < a.length(); i++)
-  {
-    if (a[i] == '(')
-    {
+  for (int i = 0; i < a.length(); i++) {
+    if (a[i] == '(') {
       arr.push("(");
     }
-    if (a[i] == '[')
-    {
+    if (a[i] == '[') {
       arr.push("[");
     }
-    if (a[i] == ')')
-    {
-      if (arr.empty())
-      {
+    if (a[i] == ')') {
+      if (arr.empty()) {
         return 0;
-      }
-      else if (arr.top() == "[")
-      {
+      } else if (arr.top() == "[") {
         return 0;
-      }
-      else if (arr.top() == "(")
-      {
+      } else if (arr.top() == "(") {
         arr.pop();
       }
     }
-    if (a[i] == ']')
-    {
-      if (arr.empty())
-      {
+    if (a[i] == ']') {
+      if (arr.empty()) {
         return 0;
-      }
-      else if (arr.top() == "(")
-      {
+      } else if (arr.top() == "(") {
         return 0;
-      }
-      else if (arr.top() == "[")
-      {
+      } else if (arr.top() == "[") {
         arr.pop();
       }
     }
@@ -50,13 +34,11 @@ int VPS_upgraded(string a)
   return (arr.empty());
 }
 
-int main(void)
-{
+int main(void) {
   cin.tie(0);
   ios::sync_with_stdio(false);
   string a;
-  while (1)
-  {
+  while (1) {
     getline(cin, a);
     if (a == ".")
       break;
