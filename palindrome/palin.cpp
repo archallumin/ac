@@ -283,11 +283,26 @@ int main(void) {
         tmp2[1] = digits[(a[2] - '0') - (tmp3[0] - '0') - 1 + ':' - '0'];
         tmp2[tmp2.size() - 2] = tmp2[1];
         savedy = tmp2[1];
-        tmp3[1] =
-            (((a[a.size() - 2] - '0') - (savedx - '0') - (savedy - '0') - C) %
-             g) +
-            ':';
+        tmp3[1] = digits[(((a[a.size() - 2] - '0') - (savedx - '0') -
+                           (savedy - '0') - C) %
+                          g) +
+                         ':' - '0'];
         tmp3[tmp3.size() - 2] = tmp3[1];
+        for (int i = 3; i <= (a.size() / 2) + 1; i++) {
+          int C2 = 0;
+          if (tmp3[i - 2] - '0' <= (a[a.size() - i] - '0') - 1) {
+            tmp1[i - 1] = '1';
+            tmp1[tmp1.size() - 1 - (i - 1)] = tmp1[i - 1];
+          } else if (tmp3[i - 2] - '0' >= (a[a.size() - i] - '0')) {
+            tmp1[i - 1] = '0';
+            tmp1[tmp1.size() - 1 - (i - 1)] = tmp1[i - 1];
+          }
+          tmp2[i - 1] =
+              digits[(((a[a.size() - i] - '0') - (tmp3[i - 2] - '0') - 1) % g) +
+                     ':' - '0'];
+          tmp2[tmp2.size() - 1 - (i - 1)] = tmp2[i - 1];
+          // * 미구현 구간입니다 으아가앙악
+        }
       }
     }
     cout << tmp1 << " " << tmp2 << " " << tmp3;
