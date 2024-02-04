@@ -288,8 +288,9 @@ int main(void) {
                           g) +
                          ':' - '0'];
         tmp3[tmp3.size() - 2] = tmp3[1];
+        int C2 = (tmp1[1] - '0') + (tmp2[1] - '0') + (tmp3[1] - '0') + C -
+                 (a[1] - '0');
         for (int i = 3; i <= (a.size() / 2) + 1; i++) {
-          int C2 = 0;
           if (tmp3[i - 2] - '0' <= (a[a.size() - i] - '0') - 1) {
             tmp1[i - 1] = '1';
             tmp1[tmp1.size() - 1 - (i - 1)] = tmp1[i - 1];
