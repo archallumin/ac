@@ -271,16 +271,17 @@ int main(void) {
         int savedy;
         int C = ((tmp1[0] - '0') + (tmp2[0] - '0') + (tmp3[0] - '0')) / g;
         if (tmp3[0] - '0' <= a[2] - 1 - '0') {
-          tmp1[1] = digits[((a[1] - '0') - (tmp2[0] - '0') % g) + ':' - '0'];
+          tmp1[1] = digits[(((a[1] - '0') - (tmp2[0] - '0')) % g) + ':' - '0'];
           tmp1[tmp1.size() - 2] = tmp1[1];
           savedx = tmp1[1];
         } else if (tmp3[0] - '0' >= a[2] - '0') {
           tmp1[1] =
-              digits[((a[1] - '0') - (tmp2[0] - '0') - 1 % g) + ':' - '0'];
+              digits[(((a[1] - '0') - (tmp2[0] - '0') - 1) % g) + ':' - '0'];
           tmp1[tmp1.size() - 2] = tmp1[1];
           savedx = tmp1[1];
         }
-        tmp2[1] = digits[(a[2] - '0') - (tmp3[0] - '0') - 1 + ':' - '0'];
+        tmp2[1] =
+            digits[(((a[2] - '0') - (tmp3[0] - '0') - 1) % g) + ':' - '0'];
         tmp2[tmp2.size() - 2] = tmp2[1];
         savedy = tmp2[1];
         tmp3[1] = digits[(((a[a.size() - 2] - '0') - (savedx - '0') -
@@ -288,21 +289,35 @@ int main(void) {
                           g) +
                          ':' - '0'];
         tmp3[tmp3.size() - 2] = tmp3[1];
-        int C2 = (tmp1[1] - '0') + (tmp2[1] - '0') + (tmp3[1] - '0') + C -
-                 (a[1] - '0');
-        for (int i = 3; i <= (a.size() / 2) + 1; i++) {
-          if (tmp3[i - 2] - '0' <= (a[a.size() - i] - '0') - 1) {
+        int C2 = ((tmp1[1] - '0') + (tmp2[1] - '0') + (tmp3[1] - '0') + C -
+                  (a[a.size() - 2] - '0')) /
+                 g;
+        for (int i = 3; i <= (a.size() / 2); i++) {
+          if (tmp3[1] - '0' <= a[i] - '0' - 1) {
             tmp1[i - 1] = '1';
-            tmp1[tmp1.size() - 1 - (i - 1)] = tmp1[i - 1];
-          } else if (tmp3[i - 2] - '0' >= (a[a.size() - i] - '0')) {
+            tmp1[tmp1.size() - i] = '1';
+          } else if (tmp3[1] - '0' >= a[i] - '0') {
             tmp1[i - 1] = '0';
-            tmp1[tmp1.size() - 1 - (i - 1)] = tmp1[i - 1];
+            tmp1[tmp1.size() - i] = '0';
           }
-          tmp2[i - 1] =
-              digits[(((a[a.size() - i] - '0') - (tmp3[i - 2] - '0') - 1) % g) +
+          tmp2[i - 1] = digits[(((a[i] - '0') - (tmp3[i - 2] - '0') - 1) % g) -
+                               '0' + ':'];
+          tmp2[tmp2.size() - i] = tmp2[i - 1];
+          tmp3[i - 1] =
+              digits[((((a[a.size() - i] - '0') - (tmp1[i - 1] - '0') -
+                        (tmp2[i - 1] - '0') - C2) %
+                       g)) +
                      ':' - '0'];
-          tmp2[tmp2.size() - 1 - (i - 1)] = tmp2[i - 1];
-          // * 미구현 구간입니다 으아가앙악
+          tmp3[tmp3.size() - i] = tmp3[i - 1];
+          C2 = ((tmp1[i - 1] - '0') + (tmp2[i - 1] - '0') +
+                (tmp3[i - 1] - '0') + C2 - (a[a.size() - i] - '0')) /
+               g;
+          //          cout << tmp1 << " " << tmp2 << " " << tmp3 << " " << C2 <<
+          //          " "; cout << (((a[a.size() - i] - '0') - (tmp1[i - 1] -
+          //          '0') -
+          //                    (tmp2[i - 1] - '0') - C2) %
+          //                   g)
+          //               << "\n";
         }
       }
     }
