@@ -4,6 +4,7 @@ using namespace std;
 long long dp[1516];
 
 int main(void) {
+  cin.tie(0)->sync_with_stdio(0);
   dp[1] = 0;
   dp[2] = 1;
   dp[3] = 1;
