@@ -8,9 +8,7 @@ int main(void)
 {
     int a;
     cin >> a;
-    int arr[a] = {
-        0,
-    };
+    int arr[a];
     for (int i = 0; i < a; i++)
     {
         cin >> arr[i];
