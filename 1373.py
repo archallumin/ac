@@ -1,2 +1,3 @@
 import sys
-print(format(int(sys.stdin.readline(), 2), 'o'))
+
+print(format(int(sys.stdin.readline(), 2), "o"))
