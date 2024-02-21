@@ -1,9 +1,9 @@
 #include <iostream>
 using namespace std;
-/* ´õÇÏ±â´Â ½±Áö */
+/* ï¿½ï¿½ï¿½Ï±ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ */
 int main(void) {
-	int a, b;
-	cin >> a >> b;
-	cout << a + b << "\n";
-	return 0;
+  int a, b;
+  cin >> a >> b;
+  cout << a + b << "\n";
+  return 0;
 }
