@@ -10,7 +10,6 @@ for i in range(1, a + 1):
 
     k = d
     print("Case #", i, sep="")
-    print(b, "x", c)
     for y in range(k, k + b):
         for x in range(c - 1, -1, -1):
             if tupper(x, y):
@@ -19,3 +18,4 @@ for i in range(1, a + 1):
                 print("..", end="")
         print("")
     print("")
+print("END")
