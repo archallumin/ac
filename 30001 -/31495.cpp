@@ -3,7 +3,6 @@
 using namespace std;
 
 int main(void) {
-  int cnt = 0;
   string a;
   getline(cin, a);
   if (a.length() > 2 && a[0] == '"' && a[a.length() - 1] == '"') {
