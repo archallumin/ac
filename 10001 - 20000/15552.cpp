@@ -2,14 +2,14 @@
 using namespace std;
 
 int main(void) {
-	cin.tie(NULL);
-	ios::sync_with_stdio(false);
-	// ÀÌÁ¦ printf, scanf µî ¸ø¾²´Ï±î ÁÖÀÇ!!
-	int a, b, t;
-	cin >> t;
-	for (int x = 0; x < t; x++) {
-		cin >> a >> b;
-		cout << a + b << "\n";
-	}
-	return 0;
+  cin.tie(NULL);
+  ios::sync_with_stdio(false);
+  // ï¿½ï¿½ï¿½ï¿½ printf, scanf ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½!!
+  int a, b, t;
+  cin >> t;
+  for (int x = 0; x < t; x++) {
+    cin >> a >> b;
+    cout << a + b << "\n";
+  }
+  return 0;
 }
