@@ -1,7 +1,7 @@
 import decimal
 import sys
 
-decimal.getcontext().prec = 40
+decimal.getcontext().prec = 60
 t = int(sys.stdin.readline())
 for i in range(1, t + 1):
     q = int(sys.stdin.readline())
