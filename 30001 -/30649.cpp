@@ -2,6 +2,7 @@
 using namespace std;
 
 int main(void) {
+  cin.tie(0)->sync_with_stdio(0);
   char arr[13][13];
   for (int i = 0; i < 13; i++) {
     for (int j = 0; j < 13; j++) {
