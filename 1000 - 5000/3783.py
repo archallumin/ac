@@ -2,9 +2,10 @@ import decimal
 import sys
 
 ctx = decimal.getcontext()
-ctx.prec = 800
+ctx.prec = 500
 li = []
 
+t = int(input())
 
 li = list(map(str, sys.stdin.read().split()))
 for i in range(len(li)):
