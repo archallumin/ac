@@ -57,7 +57,7 @@ int main(void) {
     ll l, r;
     cin >> l >> r;
     res = query(mintree, maxtree, 1, 0, x - 1, l - 1, r - 1);
-    cout << res.first << " " << res.second << "\n";
+    cout << res.second - res.first << "\n";
   }
   return 0;
 }
