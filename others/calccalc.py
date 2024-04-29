@@ -15,5 +15,7 @@ for k in range(1, n):
 for i in range(len(str(c))):
     if str(c)[i] == "6":
         cnt += 1
+    else:
+        break
 
 print(cnt)
