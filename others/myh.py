@@ -1,20 +1,15 @@
-import time
+import sys
+sys.set_int_max_str_digits(2147483647)
 
-seed = int(time.time() * 1000)
+def power(a, b):
+    if b == 0:
+        return 1
+    z = pow(a, b//2, c)
+    if b%2 == 0:
+        return z ** 2
+    else:
+        return (z ** 2) * a
+    
+a, b, c = map(int, input().split())
 
-
-def pseudo_random():
-    global seed
-    a = 1103515245
-    c = 12345
-    m = 2**31
-    seed = (a * seed + c) % m
-    return seed
-
-
-def random_int(min_val, max_val):
-    return min_val + pseudo_random() % (max_val - min_val + 1)
-
-
-for i in range(6):
-    print(random_int(1, 45))
+print(power(a, b) % c)
