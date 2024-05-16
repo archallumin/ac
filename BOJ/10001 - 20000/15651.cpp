@@ -19,6 +19,7 @@ void bt(int x) {
 }
 
 int main(void) {
+  cin.tie(0)->sync_with_stdio(0);
   cin >> a >> b;
   bt(0);
   return 0;
