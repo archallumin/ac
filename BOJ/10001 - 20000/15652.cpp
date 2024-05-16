@@ -2,25 +2,24 @@
 using namespace std;
 
 int a, b;
-int arr[8];
+int arr[9];
 
-void bt(int x) {
-  if (x == b) {
+void bt(int x, int y) {
+  if (y == b) {
     for (int i = 0; i < b; i++)
       cout << arr[i] << " ";
     cout << "\n";
     return;
   } else {
-    for (int i = 1; i <= a; i++) {
-      arr[x] = i;
-      bt(x + 1);
+    for (int i = x; i <= a; i++) {
+      arr[y] = i;
+      bt(i, y + 1);
     }
   }
 }
 
 int main(void) {
-  cin.tie(0)->sync_with_stdio(0);
   cin >> a >> b;
-  bt(0);
+  bt(1, 0);
   return 0;
 }
