@@ -1,11 +1,11 @@
-import math
+from decimal import Decimal, getcontext
 
-def ip(x):
-    for i in range (2, int(math.sqrt(x) + 1)):
-        if x % i == 0:
-            return False
-    return True
+def pi(precision):
+    getcontext().prec=precision
+    return sum(1/Decimal(16)**k * 
+        (Decimal(4)/(8*k+1) - 
+         Decimal(2)/(8*k+4) - 
+         Decimal(1)/(8*k+5) -
+         Decimal(1)/(8*k+6)) for k in range(precision))
 
-for i in range(2,1000):
-    if ip(6 * i + 1) and ip(12 * i + 1) and ip(18 * i + 1):
-        print(f"{6*i+1}, {12*i+1}, {18*i+1}, {(6*i+1)*(12*i+1)*(18*i+1)}")
+print(pi(1000))

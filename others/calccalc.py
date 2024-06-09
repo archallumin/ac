@@ -1,21 +1,10 @@
-import sys
+from decimal import Decimal, getcontext
 
-cnt = 0
-sys.set_int_max_str_digits(1000000007)
-
-input = sys.stdin.readline
-n = int(input())
-c = 75
-x = 5
-
-
-for k in range(1, n):
-    c, x = c * 5 + x * 50, c
-
-for i in range(len(str(c))):
-    if str(c)[i] == "6":
-        cnt += 1
-    else:
-        break
-
-print(cnt)
+getcontext().prec = 60
+res = Decimal()
+for k in range(1000):
+    nums = [4, -2, -1,-1]
+    denoms = [8*k+1, 8*k+4, 8*k+5, 8*k+6]
+    term = sum(Decimal(a) / b for a, b in zip(nums, denoms))
+    res += term * (Decimal(16) ** -k)
+    print(k, format(int((str(res).split("."))[1]), 'X'))
