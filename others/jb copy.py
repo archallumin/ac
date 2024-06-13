@@ -18,4 +18,4 @@ def convert(n, base):
         return convert(q, base) + T[r]
 
 
-print(convert(ans, 26).rjust(13, 'a'))
+print(convert(ans, 26).rjust(13, "a"))
