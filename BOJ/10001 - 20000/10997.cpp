@@ -1,5 +1,4 @@
 #include <iostream>
-#include <cstdio>
 using namespace std;
 
 char arr[500][500];
